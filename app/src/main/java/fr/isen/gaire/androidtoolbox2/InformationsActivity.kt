@@ -1,0 +1,12 @@
+package fr.isen.gaire.androidtoolbox2
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class InformationsActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_informations)
+    }
+}
