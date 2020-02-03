@@ -2,12 +2,15 @@ package fr.isen.gaire.androidtoolbox2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_form.*
 import org.json.JSONObject
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import java.io.File
 import java.util.*
+import android.app.AlertDialog
+import java.text.SimpleDateFormat
 
 class FormActivity : AppCompatActivity() {
 
@@ -24,6 +27,10 @@ class FormActivity : AppCompatActivity() {
 
         saveuserbutton.setOnClickListener {
             save()
+        }
+
+        informationsbutton.setOnClickListener {
+            read()
         }
     }
         fun save() {
@@ -42,6 +49,47 @@ class FormActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Remplissez les champs", Toast.LENGTH_LONG).show()
             }
+        }
+
+        fun read(){
+
+            val file = File(cacheDir.absolutePath+"/"+FormActivity.kFilename)
+            val readingfile = file.readText()
+            val json = JSONObject(readingfile)
+            val NameString = json.getString(FormActivity.kNameKey)
+            val SurnameString = json.getString(FormActivity.kSurnameKey)
+            val dateString = json.getString(FormActivity.kBirthDay)
+            val age = calculateage()
+            val alertinfos : AlertDialog.Builder = AlertDialog.Builder(this)
+            alertinfos.setTitle("Informations").setMessage("Nom : ${NameString} \nPrénom : ${SurnameString} \nDate de naisance : ${dateString} \nAge : $age ans ")
+            var alertDialog: AlertDialog = alertinfos.create()
+            alertDialog.show()
+        }
+
+        fun calculateage():Int{
+            var currentDate = Date()
+            val formatter = SimpleDateFormat("dd/MM/yyyy" )
+            val dateString1 = formatter.format(currentDate)
+            val currentDateSplit = dateString1.split("/")
+            val currentday = currentDateSplit[0].toInt()
+            val currentmonth = currentDateSplit[1].toInt()
+            val currentyear = currentDateSplit[2].toInt()
+
+            val file = File(cacheDir.absolutePath+"/"+FormActivity.kFilename)
+            val readingfile = file.readText()
+            val json = JSONObject(readingfile)
+            val dateString = json.getString(FormActivity.kBirthDay)
+            val components = dateString.split("/")
+            val birthday = components[0].toInt()
+            val birthmonth = components[1].toInt()
+            val birthyear = components[2].toInt()
+
+            var age = currentyear - birthyear
+
+            if((birthmonth > currentmonth) || (birthmonth == currentmonth && birthday < currentday)){
+                age -= 1
+            }
+            return age
         }
 }
 
