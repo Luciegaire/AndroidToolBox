@@ -30,6 +30,7 @@ class ContactAdapter(val contacts: ArrayList<ContactModel>):RecyclerView.Adapter
     class ContactViewHolder(val view: View): RecyclerView.ViewHolder(view){
         fun bind(contact: ContactModel){
             view.NameTextView.text= contact.displayName
+            view.phonetextView.text= "ID contact :" + contact.displayPhoneNumber
         }
     }
 }
