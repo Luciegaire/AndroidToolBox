@@ -11,14 +11,14 @@
         android:layout_width="347dp"
         android:layout_height="27dp"
         android:layout_marginTop="20dp"
-        android:text="Accès aux informations Android"
+        android:text="@string/acc_s_aux_informations_android"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/pickimagebutton"
         android:layout_width="78dp"
         android:layout_height="55dp"
         android:layout_marginStart="20dp"
@@ -35,18 +35,19 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
-        android:text="Latitude"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        android:text="@string/latitude"
+        app:layout_constraintStart_toEndOf="@+id/pickimagebutton"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/longitude"
-        android:layout_width="61dp"
-        android:layout_height="21dp"
+        android:layout_width="73dp"
+        android:layout_height="19dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:text="Longitude"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        tools:layout_editor_absoluteY="101dp" />
+        android:layout_marginTop="5dp"
+        android:text="@string/longitude"
+        app:layout_constraintStart_toEndOf="@+id/pickimagebutton"
+        app:layout_constraintTop_toBottomOf="@+id/latitude" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

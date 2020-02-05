@@ -47,7 +47,7 @@ class FormActivity : AppCompatActivity() {
                 file.writeText(json.toString())
 
             } else {
-                Toast.makeText(this, "Remplissez les champs", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.remplissez_champs), Toast.LENGTH_LONG).show()
             }
         }
 
@@ -61,14 +61,14 @@ class FormActivity : AppCompatActivity() {
             val dateString = json.getString(FormActivity.kBirthDay)
             val age = calculateage()
             val alertinfos : AlertDialog.Builder = AlertDialog.Builder(this)
-            alertinfos.setTitle("Informations").setMessage("Nom : ${NameString} \nPrénom : ${SurnameString} \nDate de naisance : ${dateString} \nAge : $age ans ")
+            alertinfos.setTitle(getString(R.string.infos)).setMessage("Nom : ${NameString} \nPrénom : ${SurnameString} \nDate de naisance : ${dateString} \nAge : $age ans ")
             var alertDialog: AlertDialog = alertinfos.create()
             alertDialog.show()
         }
 
         fun calculateage():Int{
             var currentDate = Date()
-            val formatter = SimpleDateFormat("dd/MM/yyyy" )
+            val formatter = SimpleDateFormat(getString(R.string.date) )
             val dateString1 = formatter.format(currentDate)
             val currentDateSplit = dateString1.split("/")
             val currentday = currentDateSplit[0].toInt()

@@ -27,6 +27,10 @@ class HomeActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             startActivity(Intent(this, FormActivity::class.java))
         }
+
+        permissionButton.setOnClickListener {
+            startActivity(Intent(this, InformationsActivity::class.java))
+        }
     }
 
 

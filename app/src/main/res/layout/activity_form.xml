@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="Formulaire"
+        android:text="@string/form"
         android:textColor="#E53935"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="160dp"
-        android:text="Nom"
+        android:text="@string/nom"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:text="Prénom"
+        android:text="@string/prenom"
         app:layout_constraintBottom_toTopOf="@+id/surnameeditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameeditText" />
@@ -69,7 +69,7 @@
         android:id="@+id/saveuserbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sauvegarder"
+        android:text="@string/sauvegarder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -96,7 +96,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginBottom="12dp"
-        android:text="Date de naissance"
+        android:text="@string/date_de_naissance"
         app:layout_constraintBottom_toTopOf="@+id/dateofbirtheditText"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -104,7 +104,7 @@
         android:id="@+id/informationsbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Voir les informations"
+        android:text="@string/voir_les_informations"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
