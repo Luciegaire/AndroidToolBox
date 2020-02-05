@@ -4,24 +4,41 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.provider.ContactsContract
 import android.graphics.Bitmap
 import kotlinx.android.synthetic.main.activity_informations.*
 import android.content.Intent
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import android.widget.ArrayAdapter
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.content.pm.PackageManager
+import fr.isen.gaire.androidtoolbox2.ContactAdapter
+import fr.isen.gaire.androidtoolbox2.ContactModel
+import androidx.recyclerview.widget.RecyclerView
 import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.widget.Adapter
 
 
 
 class InformationsActivity : AppCompatActivity() {
 
+    companion object {
+        val permission_request_code = 3
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informations)
+
+        requestPermission(android.Manifest.permission.READ_CONTACTS, permission_request_code) {
+            readContacts()
+        }
 
         pickimagebutton.setOnClickListener{
             val imagefromgalleryIntent = Intent(Intent.ACTION_PICK)
@@ -62,4 +79,18 @@ class InformationsActivity : AppCompatActivity() {
             handler()
         }
     }
+
+    fun readContacts() {
+        val listContacts = ArrayList<ContactModel>()
+        val contacts = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null)
+        while(contacts?.moveToNext() ?: false) {
+            val displayName = contacts?.getString(contacts.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+            val contactModel = ContactModel()
+            contactModel.displayName = displayName.toString()
+            listContacts.add(contactModel)
+        }
+        contactRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        contactRecyclerView.adapter = ContactAdapter(listContacts)
+    }
+
 }
