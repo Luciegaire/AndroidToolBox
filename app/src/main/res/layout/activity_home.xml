@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Bonjour"
+        android:text="@string/bonjour"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -35,10 +35,11 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="75dp"
-        android:background="#E53935"
+        android:background="@color/reed"
+        android:tint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lifecycle"
-        app:srcCompat="@android:drawable/ic_menu_call" />
+        app:srcCompat="@android:drawable/stat_sys_speakerphone" />
 
     <ImageButton
         android:id="@+id/saveButton"
@@ -47,7 +48,8 @@
         android:layout_marginTop="250dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:background="#E53935"
+        android:background="@color/reed"
+        android:tint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_input_get" />
@@ -59,8 +61,8 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="250dp"
-        android:background="#E53935"
-        android:tint="#00FFFFFF"
+        android:background="@color/reed"
+        android:tint="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_email" />
@@ -72,7 +74,7 @@
         android:layout_marginTop="75dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:background="#E53935"
+        android:background="@color/reed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save"
         app:srcCompat="@android:drawable/stat_sys_download" />
@@ -84,7 +86,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="9dp"
-        android:text="Cycle de vie"
+        android:text="@string/cycle_de_vie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lifeCycleButton" />
 
@@ -95,7 +97,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
-        android:text="Sauvegarde"
+        android:text="@string/sauvegarde"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveButton" />
 
@@ -106,7 +108,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginLeft="76dp"
         android:layout_marginTop="8dp"
-        android:text="Permissions"
+        android:text="@string/permissions"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/permissionButton" />
 
@@ -117,7 +119,7 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
-        android:text="Web services"
+        android:text="@string/web_services"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoutButton" />
 

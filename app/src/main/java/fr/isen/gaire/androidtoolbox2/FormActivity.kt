@@ -2,11 +2,9 @@ package fr.isen.gaire.androidtoolbox2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_form.*
 import org.json.JSONObject
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_login.*
 import java.io.File
 import java.util.*
 import android.app.AlertDialog

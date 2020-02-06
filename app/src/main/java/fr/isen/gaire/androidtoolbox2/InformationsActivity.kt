@@ -8,26 +8,15 @@ import android.provider.ContactsContract
 import android.graphics.Bitmap
 import kotlinx.android.synthetic.main.activity_informations.*
 import android.content.Intent
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import android.annotation.SuppressLint
-import android.widget.ArrayAdapter
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.content.pm.PackageManager
 import android.location.LocationManager
-import fr.isen.gaire.androidtoolbox2.ContactAdapter
-import fr.isen.gaire.androidtoolbox2.ContactModel
-import androidx.recyclerview.widget.RecyclerView
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
 import android.content.Context
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.location.Location
 import android.location.LocationListener
-import android.widget.Adapter
 
 
 

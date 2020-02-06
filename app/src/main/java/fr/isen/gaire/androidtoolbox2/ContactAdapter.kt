@@ -4,9 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import fr.isen.gaire.androidtoolbox2.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.recycler_view_contact.*
 import kotlinx.android.synthetic.main.recycler_view_contact.view.*
 
 class ContactAdapter(val contacts: ArrayList<ContactModel>):RecyclerView.Adapter<ContactAdapter.ContactViewHolder>(){

@@ -5,11 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_life_cycle.*
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
 
 
 class LifeCycleActivity : AppCompatActivity() {
@@ -18,7 +13,7 @@ class LifeCycleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_life_cycle)
 
-        lifeCycleText.text = "onCreate"
+        lifeCycleText.text = getString(R.string.on_create)
 
         val firstFragment = LifeCycleFragment()
         val secondFragment = LifeCycleFragment2()
@@ -26,13 +21,13 @@ class LifeCycleActivity : AppCompatActivity() {
 
         buttonFragment.setOnClickListener {
             if(firstFragment.isResumed){
-                buttonFragment.text = "Fragment 1"
-                Log.d("TAG","Fragment 1 is resumed")
+                buttonFragment.text = getString(R.string.first_fragment)
+                Log.d(getString(R.string.tag),getString(R.string.first_frag_resum))
                 supportFragmentManager.beginTransaction().replace(R.id.LifeCycleLayout, secondFragment).commit()
             }
             else{
                 buttonFragment.text = "Fragment 2"
-                Log.d("TAG","Fragment 2 is resumed")
+                Log.d(getString(R.string.tag),getString(R.string.second_frag_resum))
                 supportFragmentManager.beginTransaction().replace(R.id.LifeCycleLayout, firstFragment).commit()
             }
         }
@@ -40,28 +35,28 @@ class LifeCycleActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-        lifeCycleText.text = "onStart"
-        Log.d("TAG", "onStart")
+        lifeCycleText.text = getString(R.string.on_start)
+        Log.d(getString(R.string.tag), getString(R.string.on_start))
     }
     override fun onResume() {
         super.onResume()
-        lifeCycleText.text = "onResume"
-        Log.d("TAG", "onResume")
+        lifeCycleText.text = getString(R.string.on_resume)
+        Log.d(getString(R.string.tag), getString(R.string.on_resume))
     }
     override fun onPause() {
         super.onPause()
-        lifeCycleText.text = "onPause"
-        Log.d("TAG", "onPause")
+        lifeCycleText.text = getString(R.string.on_pause)
+        Log.d(getString(R.string.on_pause), getString(R.string.on_pause))
     }
     override fun onStop() {
         super.onStop()
-        lifeCycleText.text = "onStop"
-        Log.d("TAG", "onStop")
+        lifeCycleText.text = getString(R.string.on_stop)
+        Log.d(getString(R.string.on_stop), getString(R.string.on_stop))
     }
     override fun onDestroy() {
         super.onDestroy()
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG)
-        Log.d("TAG", "onDestroy")
+        Toast.makeText(this, getString(R.string.on_destroy), Toast.LENGTH_LONG)
+        Log.d(getString(R.string.on_destroy), getString(R.string.on_destroy))
     }
 
 }

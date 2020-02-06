@@ -31,6 +31,10 @@ class HomeActivity : AppCompatActivity() {
         permissionButton.setOnClickListener {
             startActivity(Intent(this, InformationsActivity::class.java))
         }
+
+        logoutButton.setOnClickListener {
+            startActivity(Intent(this, WebServicesActivity::class.java))
+        }
     }
 
 

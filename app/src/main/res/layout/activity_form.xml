@@ -22,11 +22,10 @@
         android:id="@+id/NameeditText"
         android:layout_width="295dp"
         android:layout_height="43dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
         android:layout_marginTop="190dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,9 +33,9 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="164dp"
         android:text="@string/nom"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,22 +45,22 @@
         android:id="@+id/surname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:text="@string/prenom"
         app:layout_constraintBottom_toTopOf="@+id/surnameeditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameeditText" />
+        app:layout_constraintTop_toBottomOf="@+id/NameeditText"
+        app:layout_constraintVertical_bias="0.8" />
 
     <EditText
         android:id="@+id/surnameeditText"
         android:layout_width="299dp"
         android:layout_height="45dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
         android:layout_marginTop="64dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameeditText" />
 
@@ -81,11 +80,10 @@
         android:id="@+id/dateofbirtheditText"
         android:layout_width="289dp"
         android:layout_height="42dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
         android:layout_marginTop="80dp"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/surnameeditText" />
 
@@ -93,9 +91,9 @@
         android:id="@+id/dateofbirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/date_de_naissance"
         app:layout_constraintBottom_toTopOf="@+id/dateofbirtheditText"
         app:layout_constraintStart_toStartOf="parent" />
