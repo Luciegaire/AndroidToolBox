@@ -7,7 +7,8 @@ import org.json.JSONObject
 import android.widget.Toast
 import java.io.File
 import java.util.*
-import android.app.AlertDialog
+import android.app.Dialog
+import android.widget.TextView
 import java.text.SimpleDateFormat
 
 class FormActivity : AppCompatActivity() {
@@ -58,10 +59,18 @@ class FormActivity : AppCompatActivity() {
             val SurnameString = json.getString(FormActivity.kSurnameKey)
             val dateString = json.getString(FormActivity.kBirthDay)
             val age = calculateage()
-            val alertinfos : AlertDialog.Builder = AlertDialog.Builder(this)
-            alertinfos.setTitle(getString(R.string.infos)).setMessage("Nom : ${NameString} \nPrénom : ${SurnameString} \nDate de naisance : ${dateString} \nAge : $age ans ")
-            var alertDialog: AlertDialog = alertinfos.create()
-            alertDialog.show()
+
+
+            //alertinfos.setTitle(getString(R.string.infos)).setMessage("Nom : ${NameString} \nPrénom : ${SurnameString} \nDate de naisance : ${dateString} \nAge : $age ans ")
+            val alertDialogB = Dialog(this)
+            alertDialogB.setContentView(R.layout.infos_layout)
+
+            alertDialogB.findViewById<TextView>(R.id.nominfos).text = "Nom : ${NameString}"
+            alertDialogB.findViewById<TextView>(R.id.prenominfos).text = "Prénom : ${SurnameString}"
+            alertDialogB.findViewById<TextView>(R.id.dateinfos).text ="Date de naisance : ${dateString}"
+            alertDialogB.findViewById<TextView>(R.id.emailinfos).text = "Age : $age ans "
+
+            alertDialogB.show()
         }
 
         fun calculateage():Int{
@@ -89,5 +98,6 @@ class FormActivity : AppCompatActivity() {
             }
             return age
         }
+
 }
 

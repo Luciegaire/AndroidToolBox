@@ -42,4 +42,11 @@
     <string name="mot_de_passe">Mot de passe</string>
     <string name="valider">Valider</string>
     <string name="hello">Hello World!</string>
+    <string name="donner_nom">Nom :</string>
+    <string name="donner_prenom">Prénom :</string>
+    <string name="donner_date_naissance">Date de naissance :</string>
+    <string name="donner_age">Age :</string>
+    <string name="informations_du_profil">Informations du profil :</string>
+    <string name="sexe">Sexe :</string>
+    <string name="donner_mail">Email :</string>
 </resources>

@@ -8,7 +8,10 @@ import kotlinx.android.synthetic.main.recycler_view_user.view.*
 import androidx.recyclerview.widget.RecyclerView
 
 
-class UserWebServicesAdapter(val users: ArrayList<UserWebServicesModel>, val clickListener:(UserWebServicesModel) -> Unit):RecyclerView.Adapter<UserWebServicesAdapter.UserViewHolder>() {
+class UserWebServicesAdapter(
+    val users: ArrayList<UserWebServicesModel>,
+    val clickListener:(UserWebServicesModel) -> Unit
+): RecyclerView.Adapter<UserWebServicesAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_user, parent,false)
@@ -34,5 +37,6 @@ class UserWebServicesAdapter(val users: ArrayList<UserWebServicesModel>, val cli
 
         }
     }
+
 
 }

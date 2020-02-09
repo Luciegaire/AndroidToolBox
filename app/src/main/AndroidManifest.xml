@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserWebServicesAdapter"></activity>
         <activity android:name=".UserWebServicesModel" />
         <activity android:name=".WebServicesActivity" />
         <activity android:name=".InformationsActivity" />

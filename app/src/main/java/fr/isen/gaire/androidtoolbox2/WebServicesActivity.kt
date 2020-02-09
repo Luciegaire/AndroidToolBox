@@ -1,14 +1,15 @@
 package fr.isen.gaire.androidtoolbox2
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_web_services.*
@@ -45,11 +46,15 @@ class WebServicesActivity : AppCompatActivity() {
     }
 
     private fun profilItemClicked(userItem : UserWebServicesModel) {
+        val alertDialogB = Dialog(this)
+        alertDialogB.setContentView(R.layout.ws_layout)
 
-        val alertDialogB : AlertDialog.Builder = AlertDialog.Builder(this)
-        alertDialogB.setTitle(getString(R.string.profil)).setMessage("Nom : " + userItem.name?.last + "\nPrenom : " + userItem.name?.first+ "\nSexe : " + userItem.gender + "\nEmail : " + userItem.email)
-        var alertDialog: AlertDialog = alertDialogB.create()
-        alertDialog.show()
+        alertDialogB.findViewById<TextView>(R.id.nominfos).text = "Nom : " + userItem.name?.last
+        alertDialogB.findViewById<TextView>(R.id.prenominfos).text = "Prénom : " + userItem.name?.first
+        alertDialogB.findViewById<TextView>(R.id.genderinfos).text = "Sexe : " + userItem.gender
+        alertDialogB.findViewById<TextView>(R.id.emailinfos).text = "Email : " + userItem.email
+
+        alertDialogB.show()
     }
 }
 
